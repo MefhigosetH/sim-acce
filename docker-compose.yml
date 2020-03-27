@@ -1,0 +1,21 @@
+version: "3"
+
+networks:
+  lan:
+
+services:
+  simacce-demo:
+    image: mefhigoseth/expo:ubuntu
+    container_name: simacce-demo
+    working_dir: /usr/src
+    command: ["expo", "start"]
+    environment:
+      REACT_NATIVE_PACKAGER_HOSTNAME: 192.168.0.45
+    networks:
+      - lan
+    ports:
+      - "19000:19000"
+      - "19001:19001"
+      - "19002:19002"
+    volumes:
+      - ./app:/usr/src/
