@@ -18,7 +18,7 @@ export default class ScanScreen extends React.Component {
   }
 
   goToDetailsComponent(scan) {
-    this.props.navigation.navigate('Details', scan);
+    this.props.navigation.navigate('Profile', scan);
   }
 
   render() {

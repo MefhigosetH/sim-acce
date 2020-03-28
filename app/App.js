@@ -5,7 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import WelcomeScreen from './components/WelcomeScreen';
 import ScanScreen from './components/ScanScreen';
-import DetailScreen from './components/DetailScreen';
+import ProfileScreen from './components/ProfileScreen';
 
 const Stack = createStackNavigator();
 
@@ -18,7 +18,7 @@ export default class App extends React.Component {
         <Stack.Navigator initialRouteName="Inicio">
           <Stack.Screen name="Inicio" component={WelcomeScreen} />
           <Stack.Screen name="Scan" component={ScanScreen} options={{ title: 'Escanear DNI' }} />
-          <Stack.Screen name="Details" component={DetailScreen} />
+          <Stack.Screen name="Profile" component={ProfileScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     );

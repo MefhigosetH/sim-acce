@@ -2,7 +2,9 @@ import React from 'react';
 import { Text, View, StyleSheet, Button } from 'react-native';
 import Constants from 'expo-constants';
 
-export default class DecodedData extends React.Component {
+import Bio from './Bio';
+
+export default class ProfileData extends React.Component {
 
   constructor(props) {
     super(props);
@@ -34,36 +36,39 @@ export default class DecodedData extends React.Component {
     const data = userData.data.split('@');
 
     return (
-      <View style={styles.container}>
+      <View style={styles.profile}>
 
-        <Text style={styles.title}>{data[4]}</Text>
-        <Text style={styles.paragraph}>{data[1]}, {data[2]}</Text>
-        <Text>Sexo: {data[3]}</Text>
-        <Text>Ejemplar: {data[5]}</Text>
-        <Text>Fecha de Nacimiento: {data[6]}</Text>
-        <Text>Fecha de Emision: {data[7]}</Text>
-        <Text>Nro. de Tramite: {data[0]}</Text>
-    </View>
+        <Bio style={styles.bio} data={data} />
+
+        <View style={styles.stats} />
+
+        <View style={styles.timeline} />
+
+      </View>
     )
   }
 }
 
+
 const styles = StyleSheet.create({
-  container: {
+
+  profile: {
     flex: 1,
-    justifyContent: 'space-around',
-    backgroundColor: '#ecf0f1',
-    padding: 10,
+    flexDirection: 'column',
+    backgroundColor: '#ecf0f1'
   },
-  title: {
-    fontSize: 52,
-    fontWeight: 'bold',
-    textAlign: 'center',
+
+  bio: {
+    flex: 1
   },
-  paragraph: {
-    margin: 24,
-    fontSize: 18,
-    fontWeight: 'bold',
-    textAlign: 'center',
+
+  stats: {
+    minHeight: 75,
+    backgroundColor: 'white',
+  },
+
+  timeline: {
+    flex: 2
   }
+
 });
