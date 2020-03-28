@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, View, StyleSheet, Button } from 'react-native';
 import Constants from 'expo-constants';
+import { Ionicons } from '@expo/vector-icons';
 
 import Bio from './Bio';
 
@@ -40,9 +41,16 @@ export default class ProfileData extends React.Component {
 
         <Bio style={styles.bio} data={data} />
 
-        <View style={styles.stats} />
+        <View style={styles.actions}>
+          <Ionicons name="ios-hand" size={40} />
+          <Ionicons name="ios-flame" size={40} />
+          <Ionicons name="ios-medkit" size={40} />
+          <Ionicons name="md-cart" size={40} />
+        </View>
 
-        <View style={styles.timeline} />
+        <View style={styles.timeline}>
+          <Text>Registro de actividades</Text>
+        </View>
 
       </View>
     )
@@ -59,16 +67,21 @@ const styles = StyleSheet.create({
   },
 
   bio: {
-    flex: 1
   },
 
-  stats: {
-    minHeight: 75,
+  actions: {
+    height: 60,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
     backgroundColor: 'white',
+    alignItems: 'center'
   },
 
   timeline: {
-    flex: 2
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 
 });

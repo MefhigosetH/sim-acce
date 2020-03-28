@@ -40,7 +40,7 @@ export default class Bio extends React.Component {
 const styles = StyleSheet.create({
 
   bio: {
-    flex: 1,
+    height: 150,
     flexDirection: 'column',
     backgroundColor: 'limegreen'
   },
